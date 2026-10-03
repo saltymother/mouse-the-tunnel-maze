@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Mouse: The Tunnel Maze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Header HUD -->
+        <header class="game-header">
+            <div class="header-top-row">
+                <div class="header-spacer"></div>
+                <h1 class="title">
+                    <span class="title-icon">🐭</span> MOUSE: THE TUNNEL MAZE
+                </h1>
+                <button id="soundToggleBtn" class="sound-btn" aria-label="Toggle Sound">
+                    🔊 <span>Sound: ON</span>
+                </button>
+            </div>
+            <div class="stage-indicator-wrapper">
+                <div id="stageCounter" class="stage-badge">TUNNEL 1 / 10</div>
+                <div id="progressDots" class="progress-dots"></div>
+            </div>
+        </header>
+
+        <!-- Main Game Screen Area -->
+        <main class="game-viewport" id="gameContainer">
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div id="startScreen" class="overlay-screen">
+                <div class="dialog-card">
+                    <div class="modal-icon">🐭</div>
+                    <h2 class="modal-title">MOUSE: THE TUNNEL MAZE</h2>
+                    <p class="modal-subtitle">“Choose wisely. One tunnel leads forward.”</p>
+                    <div class="rule-pill-container">
+                        <span class="rule-pill red">🔴 Red Tunnel</span>
+                        <span class="rule-pill blue">🔵 Blue Tunnel</span>
+                    </div>
+                    <button id="startBtn" class="primary-btn">START GAME</button>
+                </div>
+            </div>
+
+            <!-- Win Screen Overlay -->
+            <div id="winScreen" class="overlay-screen hidden">
+                <div class="dialog-card">
+                    <div class="modal-icon">🧀</div>
+                    <h2 class="modal-title">YOU ESCAPED!</h2>
+                    <p class="modal-win-text">The mouse found its way through all 10 tunnels.</p>
+                    <button id="playAgainBtn" class="primary-btn">PLAY AGAIN</button>
+                </div>
+            </div>
+
+            <!-- In-Game Status Overlay (if needed) -->
+            <div id="gameOverlay" class="hidden"></div>
+        </main>
+
+        <!-- Bottom Controls Bar: Exactly the Four Requested Buttons -->
+        <footer class="controls-panel">
+            <div class="button-bar">
+                <button id="btnBackward" class="ctrl-btn" aria-label="Backward">
+                    <span class="btn-label">← BACKWARD</span>
+                    <span class="btn-hint">[S / ↓]</span>
+                </button>
+                <button id="btnForward" class="ctrl-btn" aria-label="Forward">
+                    <span class="btn-label">↑ FORWARD</span>
+                    <span class="btn-hint">[W / ↑]</span>
+                </button>
+                <button id="btnJump" class="ctrl-btn" aria-label="Jump">
+                    <span class="btn-label">JUMP</span>
+                    <span class="btn-hint">[Space]</span>
+                </button>
+                <button id="btnSit" class="ctrl-btn" aria-label="Sit">
+                    <span class="btn-label">SIT</span>
+                    <span class="btn-hint">[C]</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Self-Contained Game Logic Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/mouse.js"></script>
+    <script src="js/tunnel_scene.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
