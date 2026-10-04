@@ -242,6 +242,50 @@ class MouseTunnelGame {
             },
             null
         );
+
+        // Direct Touch & Swipe Gestures on Canvas for Mobile Play
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTime = 0;
+
+        this.canvas.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchStartTime = performance.now();
+            }
+        }, { passive: true });
+
+        this.canvas.addEventListener('touchend', (e) => {
+            if (this.state !== 'PLAYING') return;
+            const touch = e.changedTouches[0];
+            const dx = touch.clientX - touchStartX;
+            const dy = touch.clientY - touchStartY;
+            const dt = performance.now() - touchStartTime;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < 15 && dt < 300) {
+                // Quick tap: Jump
+                this.mouse.jump();
+            } else if (dist >= 30) {
+                // Swipe detected
+                if (Math.abs(dx) > Math.abs(dy)) {
+                    if (dx > 0) {
+                        this.keys.forward = true;
+                        setTimeout(() => { this.keys.forward = false; }, 350);
+                    } else {
+                        this.keys.backward = true;
+                        setTimeout(() => { this.keys.backward = false; }, 350);
+                    }
+                } else {
+                    if (dy < 0) {
+                        this.mouse.jump();
+                    } else {
+                        this.mouse.toggleSit();
+                    }
+                }
+            }
+        }, { passive: true });
     }
 
     resize() {

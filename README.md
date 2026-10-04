@@ -1,5 +1,11 @@
 # 🐭 Mouse: The Tunnel Maze
 
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://saltymother.github.io/mouse-the-tunnel-maze/)
+[![Status](https://img.shields.io/badge/Status-Deployed%20%26%20Verified-success?style=for-the-badge)](https://saltymother.github.io/mouse-the-tunnel-maze/)
+
+> 🌐 **Live Web Game**: [https://saltymother.github.io/mouse-the-tunnel-maze/](https://saltymother.github.io/mouse-the-tunnel-maze/)  
+> 📱 *Fully responsive on both desktop workstations and mobile smartphones with on-screen buttons and direct canvas swipe gestures!*
+
 A polished, charming **2D browser game** built with pure vanilla HTML5, CSS3, JavaScript (Canvas API), and Web Audio API. Zero external dependencies, 100% self-contained, responsive across desktop, laptop, tablet, and mobile browsers.
 
 ---
