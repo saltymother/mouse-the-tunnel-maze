@@ -78,15 +78,21 @@ No external audio assets or MP3 files required! All sounds are generated in real
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Play
 
-### Method 1: Direct File Opening
+### 🌐 Play Online (GitHub Pages)
+Play directly in your browser:
+👉 **[https://saltymother.github.io/mouse-the-tunnel-maze/](https://saltymother.github.io/mouse-the-tunnel-maze/)**
+
+### 💻 Run Locally
+
+#### Method 1: Direct File Opening
 Double-click `index.html` or open it in any web browser:
 ```
 file:///Users/vaibhav/Antigravity/mouse_the_tunnel_maze/index.html
 ```
 
-### Method 2: Local Python Server
+#### Method 2: Local Python Server
 Run the included launch script or python server:
 ```bash
 ./launch.sh
@@ -94,3 +100,4 @@ Run the included launch script or python server:
 python3 server.py
 ```
 This automatically opens the game at `http://localhost:8095/index.html`!
+
